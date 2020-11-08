@@ -18,4 +18,7 @@
   <li> A calculation of how many people would be on each sub-team based on the current sub-team ratios on Team 1710</li>
 </ul>
 
-<p> In the XLS file is the number of people on each subteam not including leaders.
+<p>All parameter questions are to be Methods that either return a Boolean or an interger.
+<p>The final calculation will take one interger parameter 
+<p> The attached XLS file contains the number of people on each sub-team not including leaders. 
+<p> There is one leader per sub-team except for build which has 2
