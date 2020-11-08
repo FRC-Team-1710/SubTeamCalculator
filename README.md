@@ -1,6 +1,6 @@
 <h1>Sub-team Calculator!
   
-<h2>Make a program that calculates sub-team sizes
+<h2>Make a program that calculates sub-team sizes!
   
 <h2>Program parameters:
 
@@ -19,6 +19,6 @@
 </ul>
 
 <p>All parameter questions are to be Methods that either return a Boolean or an interger.
-<p>The final calculation will take one interger parameter 
+<p>The final calculation will take one interger parameter. 
 <p> The attached XLS file contains the number of people on each sub-team not including leaders. 
 <p> There is one leader per sub-team except for build which has 2
