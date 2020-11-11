@@ -3,7 +3,18 @@ import java.util.Scanner; //imports scanner class
 
 public class MyClass {
 	public static void main(String args[]) {
-	   ProgramIntro();
+		// Subteam key
+		final int BUILD = 0;
+		final int DESIGN = 1;
+		final int FINANCE = 2;
+		final int GRAPHICS = 3;
+		final int MARKETING = 4;
+		final int MEDIA = 5;
+		final int OUTREACH = 6;
+		final int PROGRAMMING = 7;
+		final int INITIATIVES = 8;
+		
+		ProgramIntro();
   }
 
    public static void ProgramIntro(){
@@ -22,5 +33,51 @@ public class MyClass {
 	    }
 	    return pot; //returns value of "pot"
 	  }
+	
+	public static int[] calculation(int total, boolean fcLead, boolean ogLead) {
+		// Gaven
+		/*
+		* Takes in the total size of the team and returns the size of each individual
+		* subteam in an array
+		*/
+
+		if(ogLead == true){
+			// Remove leaders from the totals to streamline process
+			total -= 11;
+		}
+
+		if(total < 0){
+			//In the event of a number too low for realistic results
+			System.out.println("Error: not enough members;  please try again");
+			System.exit(1);
+		}
+
+		// Calculate numbers for each subteam
+		int buildNum = (int)(40 * 0.3);
+		int designNum = (int)(total * 0.125);
+		int financeNum = (int)(total * 0.1);
+		int graphicsNum = (int)(total * 0.1);
+		int marketingNum = (int)(total * 0.075);
+		int mediaNum = (int)(total * 0.075);
+		int outreachNum = (int)(total * 0.05);
+		int programmingNum = (int)(total * 0.125);
+		int initiativesNum = (int)(total * 0.05);
+
+		if(fcLead == true){
+			// Add subteam leaders to final counts
+			buildNum += 2;
+			designNum += 1;
+			financeNum += 1;
+			graphicsNum += 1;
+			marketingNum += 1;
+			mediaNum += 1;
+			outreachNum += 1;
+			programmingNum += 1;
+			initiativesNum += 1;
+		}
+		// Create and return an array
+		int[] numbers = {buildNum, designNum, financeNum, graphicsNum, marketingNum, mediaNum, outreachNum, programmingNum, initiativesNum};
+		return numbers;
+	}
 }
 
