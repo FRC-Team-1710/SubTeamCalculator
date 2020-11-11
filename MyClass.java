@@ -3,36 +3,38 @@ import java.util.Scanner; //imports scanner class
 
 public class MyClass {
 	public static void main(String args[]) {
-		// Subteam key
-		final int BUILD = 0;
-		final int DESIGN = 1;
-		final int FINANCE = 2;
-		final int GRAPHICS = 3;
-		final int MARKETING = 4;
-		final int MEDIA = 5;
-		final int OUTREACH = 6;
-		final int PROGRAMMING = 7;
-		final int INITIATIVES = 8;
-		
 		ProgramIntro();
-  }
+  	}
 
-   public static void ProgramIntro(){
-	    System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
-    	System.out.println("The questions are as follows:");
-   	  System.out.println("How many people are on the team in total?");
-    	System.out.println("Are leaders included in the total count?");
-    	System.out.println("Are leaders included in the original number of people on the team?");
-    }
-	  public static int pot(){
-	    Scanner potScanner = new Scanner(System.in); //takes user input
-	    System.out.println("How many people are on the team in total?"); //prints question
-	    int pot = potScanner.nextInt(); //"pot" means people on team
-            if (pot < 0){
-	      pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
-	    }
-	    return pot; //returns value of "pot"
-	  }
+	// Subteam keys
+	static final int BUILD = 0;
+	static final int DESIGN = 1;
+	static final int FINANCE = 2;
+	static final int GRAPHICS = 3;
+	static final int MARKETING = 4;
+	static final int MEDIA = 5;
+	static final int OUTREACH = 6;
+	static final int PROGRAMMING = 7;
+	static final int INITIATIVES = 8;
+	// Used for simple access to array returned by calculation
+	
+  	public static void ProgramIntro(){
+		System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
+    		System.out.println("The questions are as follows:");
+   		System.out.println("How many people are on the team in total?");
+    		System.out.println("Are leaders included in the total count?");
+    		System.out.println("Are leaders included in the original number of people on the team?");
+    	}
+	
+	public static int pot(){
+		Scanner potScanner = new Scanner(System.in); //takes user input
+		System.out.println("How many people are on the team in total?"); //prints question
+		int pot = potScanner.nextInt(); //"pot" means people on team
+            	if (pot < 0){
+	      		pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
+	    	}
+	    	return pot; //returns value of "pot"
+	}
 	
 	public static int[] calculation(int total, boolean fcLead, boolean ogLead) {
 		// Gaven
