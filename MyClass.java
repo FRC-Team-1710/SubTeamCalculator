@@ -2,8 +2,9 @@ import java.util.*;
 public class MyClass {
     public static void main(String args[]) {
      ProgramIntro();
-     userInputLeadersInFinalCount(); //can be removed if needed
-     userInputLeadersInOGCount();    //this too
+     pot();
+     userInputLeadersInOGCount();    //can be removed if needed
+     userInputLeadersInFinalCount(); //this too
      }
   
   public static void ProgramIntro(){
@@ -13,6 +14,16 @@ public class MyClass {
     	System.out.println("Are leaders included in the total count?");
     	System.out.println("Are leaders included in the original number of people on the team?");
     }
+  
+  public static int pot(){
+	    Scanner potScanner = new Scanner(System.in); //takes user input
+	    System.out.println("How many people are on the team in total?"); //prints question
+	    int pot = potScanner.nextInt(); //"pot" means people on team
+            if (pot < 0){
+	      pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
+	    }
+	    return pot; //returns value of "pot"
+	  }
   
     public static String userInputLeadersInFinalCount(){ //Returns whether leaders will be included in final count; Made by Andrew
         Scanner myObj = new Scanner(System.in);
