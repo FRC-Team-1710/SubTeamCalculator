@@ -25,57 +25,66 @@ public class MyClass {
 	    return pot; //returns value of "pot"
 	  }
   
-    public static String userInputLeadersInFinalCount(){ //Returns whether leaders will be included in final count; Made by Andrew
+    public static boolean userInputLeadersInFinalCount(){ //Returns whether leaders will be included in final count; Made by Andrew
+	boolean leadersIncludedFinalCount;
         Scanner myObj = new Scanner(System.in);
         
         System.out.println("Are leaders included in the final count? (yes or no)");
         String leaderIncludedFinalCount = myObj.nextLine();
         
         if (leaderIncludedFinalCount.equals("yes")){
-            System.out.println("Leaders will be included in final count");
+//            System.out.println("Leaders will be included in final count");
+		leadersIncludedFinalCount = true;
         }
         else if (leaderIncludedFinalCount.equals("no")){
-            System.out.println("Leaders will not be included in final count");
+//            System.out.println("Leaders will not be included in final count");
+		leadersIncludedFinalCount = false;
         }else{
             System.out.println("Please enter a correct response. (Non-capital yes or no)");
             leaderIncludedFinalCount = myObj.nextLine();
             if (leaderIncludedFinalCount.equals("yes")){
-            System.out.println("Leaders will be included in final count");
-        }
+//            System.out.println("Leaders will be included in final count");
+		    leadersIncludedFinalCount = true;
+	    }
         else if (leaderIncludedFinalCount.equals("no")){
-            System.out.println("Leaders will not be included in final count");
+//            System.out.println("Leaders will not be included in final count");
+		leadersIncludedFinalCount = false;
         }else{
             System.out.println("Restart the program");
         }
         }
-        
-        return leaderIncludedFinalCount;
+        return leadersIncludedFinalCount;
     }
     
     public static String userInputLeadersInOGCount(){ //Returns whether leaders were included in original count; Made by Andrew
+	    boolean leadersIncludedOGCount;
         Scanner myObj = new Scanner(System.in);
         
         System.out.println("Were leaders included in the original count? (yes or no)");
         String leaderIncludedOGCount = myObj.nextLine();
         
         if (leaderIncludedOGCount.equals("yes")){
-            System.out.println("Leaders were included in original count");
+ //           System.out.println("Leaders were included in original count");
+		leadersIncludedOGCount = true;
         }
         else if (leaderIncludedOGCount.equals("no")){
-            System.out.println("Leaders were not included in original count");
+//            System.out.println("Leaders were not included in original count");
+		leadersIncludedOGCount = false;
         }else{
             System.out.println("Please enter a correct response. (Non-capital yes or no)");
             leaderIncludedOGCount = myObj.nextLine();
             if (leaderIncludedOGCount.equals("yes")){
-            System.out.println("Leaders were included in original count");
+//            System.out.println("Leaders were included in original count");
+		    leadersIncludedOGCount = true;
         }
         else if (leaderIncludedOGCount.equals("no")){
-            System.out.println("Leaders were not included in original count");
+//            System.out.println("Leaders were not included in original count");
+		leadersIncludedOGCount = false;
         }else{
             System.out.println("Restart the program");
         }
         }
         
-        return leaderIncludedOGCount;
+        return leadersIncludedOGCount;
     }
 }
