@@ -56,7 +56,7 @@ public class MyClass {
         return leadersIncludedFinalCount;
     }
     
-    public static String userInputLeadersInOGCount(){ //Returns whether leaders were included in original count; Made by Andrew
+    public static boolean userInputLeadersInOGCount(){ //Returns whether leaders were included in original count; Made by Andrew
 	    boolean leadersIncludedOGCount;
         Scanner myObj = new Scanner(System.in);
         
