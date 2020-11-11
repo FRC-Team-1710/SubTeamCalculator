@@ -1,23 +1,25 @@
 public class MyClass {
+    static String initialLeaderString, finalLeaderString; //declare static strings
+
     public static void main(String args[]) {
-        outro();
+        outro(true, true, array); //Parameters need to be updated from different methods
     }
     
     public static void outro(boolean finalLeaders, boolean initialLeaders, int [] array) {
         if(initialLeaders) {
-            String initialLeaderString = "Including leaders in the original count";
+            initialLeaderString = "Including leaders in the original count";
         } else {
-            String initialLeaderString = "Excluding leaders in the original count";
+            initialLeaderString = "Excluding leaders in the original count";
         }
 
         if(finalLeaders) {
-            String finalLeaderString = "including leaders in the final count,";
+            finalLeaderString = "including leaders in the final count,";
         } else {
-            String finalLeaderString = "excluding leaders in the final count,";
+            finalLeaderString = "excluding leaders in the final count,";
         }
 
-        System.out.println(initialLeaderString + " and \n" + finalLeaderString + " there \n will be " + programmerCount + " programmers, " + builderCount + " builders,\n " + designerCount + " designers, " + 
-        marketerCount + " marketers, " + outreacherCount + " outreachers,\n " + initiativerCount + " initiativers, " + mediaerCount + " mediaers, " + graphicerCount + " graphicers,\n and " + financerCount + " financers.");
+        System.out.println(initialLeaderString + " and \n" + finalLeaderString + " there will be \n" + array[0] + " programmers, " + array[1] + " builders, " + array[2] + " designers,\n" + 
+        array[3] + " marketers, " + array[4] + " outreachers, " + array[5] + " initiaters,\n" + array[6] + " photographers, " + array[7] + " graphical creators, and " + array[8] + " financers.");
 
     }
 }
