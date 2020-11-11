@@ -5,12 +5,9 @@ public class MyClass {
 	   
 	}
 	   public static int pot(){
-	     Scanner potScanner = new Scanner(System.in);
-	     System.out.println("How many people are on the team?");
-	     //"pot" means people on team
-	     int pot = potScanner.nextInt();
-	     return pot;
+	     Scanner potScanner = new Scanner(System.in); //takes user input
+	     System.out.println("How many people are on the team in total?"); //prints question
+	     int pot = potScanner.nextInt(); //"pot" means people on team
+	     return pot; //returns value of "pot"
 	    }
-	
-
 }
