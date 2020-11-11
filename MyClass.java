@@ -1,11 +1,20 @@
 import java.util.*;
 public class MyClass {
     public static void main(String args[]) {
-        
-     userInputLeadersInFinalCount();
-     userInputLeadersInOGCount();
+     ProgramIntro();
+     userInputLeadersInFinalCount(); //can be removed if needed
+     userInputLeadersInOGCount();    //this too
      }
-    public static String userInputLeadersInFinalCount(){ //Returns whether leaders will be included in final count; Made by Andrew Kepych
+  
+  public static void ProgramIntro(){
+	System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
+    	System.out.println("The questions are as follows:");
+   	System.out.println("How many people are on the team in total?");
+    	System.out.println("Are leaders included in the total count?");
+    	System.out.println("Are leaders included in the original number of people on the team?");
+    }
+  
+    public static String userInputLeadersInFinalCount(){ //Returns whether leaders will be included in final count; Made by Andrew
         Scanner myObj = new Scanner(System.in);
         
         System.out.println("Are leaders included in the final count? (yes or no)");
@@ -32,7 +41,7 @@ public class MyClass {
         return leaderIncludedFinalCount;
     }
     
-    public static String userInputLeadersInOGCount(){ //Returns whether leaders were included in original count; Made by Andrew Kepych
+    public static String userInputLeadersInOGCount(){ //Returns whether leaders were included in original count; Made by Andrew
         Scanner myObj = new Scanner(System.in);
         
         System.out.println("Were leaders included in the original count? (yes or no)");
