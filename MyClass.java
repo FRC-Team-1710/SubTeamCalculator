@@ -17,6 +17,9 @@ public class MyClass {
 	    Scanner potScanner = new Scanner(System.in); //takes user input
 	    System.out.println("How many people are on the team in total?"); //prints question
 	    int pot = potScanner.nextInt(); //"pot" means people on team
+            if (pot < 0){
+	      pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
+	    }
 	    return pot; //returns value of "pot"
 	  }
 }
