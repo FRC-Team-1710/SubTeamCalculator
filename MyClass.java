@@ -2,7 +2,8 @@ public class MyClass {
     static String initialLeaderString, finalLeaderString; //declare static strings
 
     public static void main(String args[]) {
-        outro(true, true, array); //Parameters need to be updated from different methods
+        int array[] = { 0,1,2,3,4,5,6,7,8 };
+        outro(userInputLeadersInFinalCount(), userInputLeadersInOGCount(), calculation(pot(), userInputLeadersInFinalCount(), userInputLeadersInOGCount())); //Parameters need to be updated from different methods
     }
     
     public static void outro(boolean finalLeaders, boolean initialLeaders, int [] array) {
@@ -13,13 +14,22 @@ public class MyClass {
         }
 
         if(finalLeaders) {
-            finalLeaderString = "including leaders in the final count,";
+            finalLeaderString = "including leaders in the final count.";
         } else {
-            finalLeaderString = "excluding leaders in the final count,";
+            finalLeaderString = "excluding leaders in the final count.";
         }
 
-        System.out.println(initialLeaderString + " and \n" + finalLeaderString + " there will be \n" + array[0] + " programmers, " + array[1] + " builders, " + array[2] + " designers,\n" + 
-        array[3] + " marketers, " + array[4] + " outreachers, " + array[5] + " initiaters,\n" + array[6] + " photographers, " + array[7] + " graphical creators, and " + array[8] + " financers.");
+        System.out.println(initialLeaderString + " and " + finalLeaderString);
+        System.out.println("there will be:");
+        System.out.println(array[0] + " builders");
+        System.out.println(array[1] + " designers");
+        System.out.println(array[2] + " financers");
+        System.out.println(array[3] + " graphical creators");
+        System.out.println(array[4] + " marketers");
+        System.out.println(array[5] + " photographers");
+        System.out.println(array[6] + " outreachers");
+        System.out.println(array[7] + " programmers");
+        System.out.println(array[8] + " initiaters");
 
     }
 }
