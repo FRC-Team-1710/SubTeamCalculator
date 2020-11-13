@@ -58,7 +58,7 @@ public class MyClass {
       }
 
       // Calculate numbers for each subteam
-      int buildNum = (int)(40 * 0.3);
+      int buildNum = (int)(total * 0.3);
       int designNum = (int)(total * 0.125);
       int financeNum = (int)(total * 0.1);
       int graphicsNum = (int)(total * 0.1);
