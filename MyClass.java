@@ -1,11 +1,11 @@
-import java.util.Scanner; //imports scanner class
-
-public class MyClass {
-  static String initialLeaderString, finalLeaderString; //declare static strings
-	public static void main(String args[]) {
-	  ProgramIntro();
-  }
-
+  import java.util.*;
+  public class MyClass {
+      static String initialLeaderString, finalLeaderString; //declare static strings
+      public static void main(String args[]) {
+       ProgramIntro();
+       outro(userInputLeadersInFinalCount(), userInputLeadersInOGCount(), calculation(pot(), userInputLeadersInFinalCount(), userInputLeadersInOGCount()));
+      }
+    
 	// Subteam keys
 	static final int BUILD = 0;
 	static final int DESIGN = 1;
@@ -17,26 +17,26 @@ public class MyClass {
 	static final int PROGRAMMING = 7;
 	static final int INITIATIVES = 8;
 	// Used for simple access to array returned by calculation
-	
-  public static void ProgramIntro(){
-		System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
-    System.out.println("The questions are as follows:");
-   	System.out.println("How many people are on the team in total?");
-    System.out.println("Are leaders included in the total count?");
-    System.out.println("Are leaders included in the original number of people on the team?");
-  }
-	
-	public static int pot(){
-		Scanner potScanner = new Scanner(System.in); //takes user input
-		System.out.println("How many people are on the team in total?"); //prints question
-		int pot = potScanner.nextInt(); //"pot" means people on team
-    if (pot < 0){
-	    pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
-	  }
-	  return pot; //returns value of "pot"
-	}
-	
-	public static int[] calculation(int total, boolean fcLead, boolean ogLead) {
+    
+      public static void ProgramIntro() {
+          System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
+          System.out.println("The questions are as follows:");
+          System.out.println("How many people are on the team in total?");
+          System.out.println("Are leaders included in the total count?");
+          System.out.println("Are leaders included in the original number of people on the team?");
+      }
+
+      public static int pot() {
+          Scanner potScanner = new Scanner(System.in); //takes user input
+          System.out.println("How many people are on the team in total?"); //prints question
+          int pot = potScanner.nextInt(); //"pot" means people on team
+          if (pot < 0) {
+              pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
+          }
+          return pot; //returns value of "pot"
+      }
+
+    public static int[] calculation(int total, boolean fcLead, boolean ogLead) {
 		// Gaven
 		/*
 		* Takes in the total size of the team and returns the size of each individual
@@ -81,30 +81,67 @@ public class MyClass {
 		int[] numbers = {buildNum, designNum, financeNum, graphicsNum, marketingNum, mediaNum, outreachNum, programmingNum, initiativesNum};
 		return numbers;
 	}
-}
-	   ProgramIntro();
-       outro(userInputLeadersInFinalCount(), userInputLeadersInOGCount(), calculation(pot(), userInputLeadersInFinalCount(), userInputLeadersInOGCount()));
-    }
-
-    public static void ProgramIntro(){
-	    System.out.println("This program will calculate subteam sizes based on predetermined \nsubteam ratios that the user will input!");
-    	System.out.println("The questions are as follows:");
-   	  System.out.println("How many people are on the team in total?");
-    	System.out.println("Are leaders included in the total count?");
-    	System.out.println("Are leaders included in the original number of people on the team?");
-    }
-
-	public static int pot(){
-	    Scanner potScanner = new Scanner(System.in); //takes user input
-	    System.out.println("How many people are on the team in total?"); //prints question
-	    int pot = potScanner.nextInt(); //"pot" means people on team
-            if (pot < 0){
-	      pot = 0; //this makes it so that if someone were to put a negative number, then "pot" is set to 0
-	    }
-	    return pot; //returns value of "pot"
-    }
     
-    public static void outro(boolean finalLeaders, boolean initialLeaders, int [] array) {
+      public static boolean userInputLeadersInFinalCount() { //Returns whether leaders will be included in final count; Made by Andrew
+          boolean leadersIncludedFinalCount = false;
+          Scanner myObj = new Scanner(System.in);
+
+          System.out.println("Are leaders included in the final count? (yes or no)");
+          String leaderIncludedFinalCount = myObj.nextLine();
+
+          if (leaderIncludedFinalCount.equals("yes")) {
+              //System.out.println("Leaders will be included in final count");
+              leadersIncludedFinalCount = true;
+          } else if (leaderIncludedFinalCount.equals("no")) {
+              //System.out.println("Leaders will not be included in final count");
+              leadersIncludedFinalCount = false;
+          } else {
+              System.out.println("Please enter a correct response. (Non-capital yes or no)");
+              leaderIncludedFinalCount = myObj.nextLine();
+              if (leaderIncludedFinalCount.equals("yes")) {
+                  //System.out.println("Leaders will be included in final count");
+                  leadersIncludedFinalCount = true;
+              } else if (leaderIncludedFinalCount.equals("no")) {
+                  //System.out.println("Leaders will not be included in final count");
+                  leadersIncludedFinalCount = false;
+              } else {
+                  System.out.println("Restart the program");
+              }
+          }
+          return leadersIncludedFinalCount;
+      }
+
+      public static boolean userInputLeadersInOGCount() { //Returns whether leaders were included in original count; Made by Andrew
+          boolean leadersIncludedOGCount = true;
+          Scanner myObj = new Scanner(System.in);
+
+          System.out.println("Were leaders included in the original count? (yes or no)");
+          String leaderIncludedOGCount = myObj.nextLine();
+
+          if (leaderIncludedOGCount.equals("yes")) {
+              //System.out.println("Leaders were included in original count");
+              leadersIncludedOGCount = true;
+          } else if (leaderIncludedOGCount.equals("no")) {
+              //System.out.println("Leaders were not included in original count");
+              leadersIncludedOGCount = false;
+          } else {
+              System.out.println("Please enter a correct response. (Non-capital yes or no)");
+              leaderIncludedOGCount = myObj.nextLine();
+              if (leaderIncludedOGCount.equals("yes")) {
+                  //System.out.println("Leaders were included in original count");
+                  leadersIncludedOGCount = true;
+              } else if (leaderIncludedOGCount.equals("no")) {
+                  //System.out.println("Leaders were not included in original count");
+                  leadersIncludedOGCount = false;
+              } else {
+                  System.out.println("Restart the program");
+              }
+          }
+
+          return leadersIncludedOGCount;
+      }
+    
+        public static void outro(boolean finalLeaders, boolean initialLeaders, int [] array) {
         if(initialLeaders) {
             initialLeaderString = "Including leaders in the original count";
         } else {
@@ -130,4 +167,5 @@ public class MyClass {
         System.out.println(array[8] + " initiaters");
 
     }
-}
+    
+  }
