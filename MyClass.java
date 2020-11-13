@@ -98,6 +98,7 @@ public class MyClass {
         } else if (leaderIncludedFinalCount.equals("no")) {
             //System.out.println("Leaders will not be included in final count");
             leadersIncludedFinalCount = false;
+
         } else {
             System.out.println("Please enter a correct response. (Non-capital yes or no)");
             leaderIncludedFinalCount = myObj.nextLine();
