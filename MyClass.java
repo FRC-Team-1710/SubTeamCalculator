@@ -3,9 +3,10 @@ public class MyClass {
     static String initialLeaderString, finalLeaderString; //declare static strings
     public static void main(String args[]) {
      ProgramIntro();
+     int pot = pot();
      boolean finalLeader = userInputLeadersInFinalCount();
      boolean originalLeader = userInputLeadersInOGCount();
-     outro(finalLeader, originalLeader, calculation(pot(), finalLeader, originalLeader));
+     outro(finalLeader, originalLeader, calculation(pot, finalLeader, originalLeader));
     }
   
   // Subteam keys
